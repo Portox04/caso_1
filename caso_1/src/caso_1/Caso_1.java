@@ -49,10 +49,11 @@ public class Caso_1 {
             int motors = Integer.parseInt(JOptionPane.showInputDialog("Cuantos productos de automotriz contiene?"));
             Facturas factura = new Facturas(nameClient, idClient, code, month, electrical, motors, builds);
             factura.setMount(mount);
-            factura.bonusCalculate(mount,electrical, motors, builds);
+            factura.bonusCalculate(mount, electrical, motors, builds);
             //Loop de entrada
             String salida = JOptionPane.showInputDialog("Ingresa SI para agregar otra factura o NO para terminar");
             if (salida.compareTo("NO") == 0) {
+                JOptionPane.showMessageDialog(null, factura.toString());
                 break;
             } else if (salida.compareTo("SI") == 0) {
 
@@ -60,8 +61,6 @@ public class Caso_1 {
                 salida = JOptionPane.showInputDialog("Ingresa SI o NO para terminar");
             }
         }
-        
-        JOptionPane.showMessageDialog(null, toString(factura));
-        
+
     }
 }
